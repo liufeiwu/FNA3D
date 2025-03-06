@@ -1545,3 +1545,4 @@ FNA3DAPI void FNA3D_SetTextureName(FNA3D_Device *device, FNA3D_Texture *texture,
 #endif /* FNA3D_H */
 
 /* vim: set noexpandtab shiftwidth=8 tabstop=8: */
+
