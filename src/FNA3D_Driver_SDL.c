@@ -2723,26 +2723,32 @@ static FNA3D_Texture* SDLGPU_CreateTexture2D(
 ) {
 	SDL_GPUTextureUsageFlags newUsageFlags = 0;
 
-	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_SAMPLER)
+	if (usageFlags & FNA3D_TextureUsageFlags_SAMPLER)
 	{
 		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_SAMPLER;
 	}
-	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_COLOR_TARGET){
+	if (usageFlags & FNA3D_TextureUsageFlags_COLOR_TARGET)
+	{
 		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COLOR_TARGET;
 	}
-	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_DEPTH_STENCIL_TARGET){
+	if (usageFlags & FNA3D_TextureUsageFlags_DEPTH_STENCIL_TARGET)
+	{
 		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_DEPTH_STENCIL_TARGET;
 	}
-	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_GRAPHICS_STORAGE_READ){
+	if (usageFlags & FNA3D_TextureUsageFlags_GRAPHICS_STORAGE_READ)
+	{
 		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_GRAPHICS_STORAGE_READ;
 	}
-	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_COMPUTE_STORAGE_READ){
+	if (usageFlags & FNA3D_TextureUsageFlags_COMPUTE_STORAGE_READ)
+	{
 		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_READ;
 	}
-	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_COMPUTE_STORAGE_WRITE){
+	if (usageFlags & FNA3D_TextureUsageFlags_COMPUTE_STORAGE_WRITE)
+	{
 		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_WRITE;
 	}
-	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_COMPUTE_STORAGE_SIMULTANEOUS_READ_WRITE){
+	if (usageFlags & FNA3D_TextureUsageFlags_COMPUTE_STORAGE_SIMULTANEOUS_READ_WRITE)
+	{
 		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_SIMULTANEOUS_READ_WRITE;
 	}
 	if (isRenderTarget)

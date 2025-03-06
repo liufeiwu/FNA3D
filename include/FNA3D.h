@@ -154,7 +154,7 @@ typedef enum FNA3D_TextureUsageFlags
 	FNA3D_TextureUsageFlags_GRAPHICS_STORAGE_READ = (1u << 3),
 	FNA3D_TextureUsageFlags_COMPUTE_STORAGE_READ = (1u << 4),
 	FNA3D_TextureUsageFlags_COMPUTE_STORAGE_WRITE = (1u << 5),
-	FNA3D_TextureUsageFlags_COMPUTE_STORAGE_SIMULTANEOUS_READ_WRITE = (1u << 6)
+	FNA3D_TextureUsageFlags_COMPUTE_STORAGE_SIMULTANEOUS_READ_WRITE = (1u << 6),
 } FNA3D_TextureUsageFlags;
 
 typedef enum FNA3D_DepthFormat
