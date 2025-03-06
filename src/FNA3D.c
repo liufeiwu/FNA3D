@@ -684,7 +684,8 @@ FNA3D_Texture* FNA3D_CreateTexture2D(
 		width,
 		height,
 		levelCount,
-		isRenderTarget
+		isRenderTarget,
+		usageFlags
 	);
 	TRACE_CREATETEXTURE2D
 	return result;
