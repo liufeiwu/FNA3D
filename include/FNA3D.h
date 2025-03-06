@@ -59,6 +59,7 @@ extern "C" {
 /* Type Declarations */
 
 typedef struct FNA3D_Device FNA3D_Device;
+typedef struct FNA3D_NativeDriver FNA3D_NativeDriver;
 typedef struct FNA3D_Texture FNA3D_Texture;
 typedef struct FNA3D_Buffer FNA3D_Buffer;
 typedef struct FNA3D_Renderbuffer FNA3D_Renderbuffer;
@@ -535,6 +536,10 @@ FNA3DAPI void FNA3D_GetDrawableSize(void* window, int32_t *w, int32_t *h);
 FNA3DAPI FNA3D_Device* FNA3D_CreateDevice(
 	FNA3D_PresentationParameters *presentationParameters,
 	uint8_t debugMode
+);
+
+FNA3DAPI FNA3D_NativeDriver* FNA3D_GetNativeDevice(
+	FNA3D_Device *device
 );
 
 /* Destroys a rendering context previously returned by FNA3D_CreateDevice. */

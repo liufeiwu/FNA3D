@@ -291,6 +291,7 @@ static inline int32_t BytesPerImage(
 /* FNA3D_Device Definition */
 
 typedef struct FNA3D_Renderer FNA3D_Renderer;
+typedef struct FNA3D_NativeDriver FNA3D_NativeDriver;
 
 struct FNA3D_Device
 {
