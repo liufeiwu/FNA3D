@@ -919,7 +919,8 @@ static void FNA3D_ExecuteCommand(
 				cmd->createTexture2D.width,
 				cmd->createTexture2D.height,
 				cmd->createTexture2D.levelCount,
-				cmd->createTexture2D.isRenderTarget
+				cmd->createTexture2D.isRenderTarget,
+				FNA3D_TextureUsageFlags_SAMPLER
 			);
 			break;
 		case FNA3D_COMMAND_CREATETEXTURE3D:
