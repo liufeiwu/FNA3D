@@ -146,6 +146,17 @@ typedef enum FNA3D_SurfaceFormat
 	FNA3D_SURFACEFORMAT_BC7SRGB_EXT,
 } FNA3D_SurfaceFormat;
 
+typedef enum FNA3D_TextureUsageFlags
+{
+	FNA3D_TextureUsageFlags_SAMPLER = (1u << 0),
+	FNA3D_TextureUsageFlags_COLOR_TARGET = (1u << 1),
+	FNA3D_TextureUsageFlags_DEPTH_STENCIL_TARGET = (1u << 2),
+	FNA3D_TextureUsageFlags_GRAPHICS_STORAGE_READ = (1u << 3),
+	FNA3D_TextureUsageFlags_COMPUTE_STORAGE_READ = (1u << 4),
+	FNA3D_TextureUsageFlags_COMPUTE_STORAGE_WRITE = (1u << 5),
+	FNA3D_TextureUsageFlags_COMPUTE_STORAGE_SIMULTANEOUS_READ_WRITE = (1u << 6)
+} FNA3D_TextureUsageFlags;
+
 typedef enum FNA3D_DepthFormat
 {
 	FNA3D_DEPTHFORMAT_NONE,
@@ -904,7 +915,8 @@ FNA3DAPI FNA3D_Texture* FNA3D_CreateTexture2D(
 	int32_t width,
 	int32_t height,
 	int32_t levelCount,
-	uint8_t isRenderTarget
+	uint8_t isRenderTarget,
+	FNA3D_TextureUsageFlags usageFlags
 );
 
 /* Creates a 3D texture to be applied to VerifySampler.

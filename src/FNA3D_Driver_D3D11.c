@@ -3328,7 +3328,8 @@ static FNA3D_Texture* D3D11_CreateTexture2D(
 	int32_t width,
 	int32_t height,
 	int32_t levelCount,
-	uint8_t isRenderTarget
+	uint8_t isRenderTarget,
+	FNA3D_TextureUsageFlags usageFlags
 ) {
 	D3D11Renderer *renderer = (D3D11Renderer*) driverData;
 	D3D11Texture *result;

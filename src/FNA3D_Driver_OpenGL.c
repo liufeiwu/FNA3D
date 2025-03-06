@@ -3592,7 +3592,8 @@ static FNA3D_Texture* OPENGL_CreateTexture2D(
 	int32_t width,
 	int32_t height,
 	int32_t levelCount,
-	uint8_t isRenderTarget
+	uint8_t isRenderTarget,
+	FNA3D_TextureUsageFlags usageFlags
 ) {
 	OpenGLRenderer *renderer = (OpenGLRenderer*) driverData;
 	OpenGLTexture *result;

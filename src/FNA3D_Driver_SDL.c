@@ -2718,13 +2718,36 @@ static FNA3D_Texture* SDLGPU_CreateTexture2D(
 	int32_t width,
 	int32_t height,
 	int32_t levelCount,
-	uint8_t isRenderTarget
+	uint8_t isRenderTarget,
+	FNA3D_TextureUsageFlags usageFlags
 ) {
-	SDL_GPUTextureUsageFlags usageFlags = SDL_GPU_TEXTUREUSAGE_SAMPLER;
+	SDL_GPUTextureUsageFlags newUsageFlags = 0;
 
+	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_SAMPLER)
+	{
+		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_SAMPLER;
+	}
+	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_COLOR_TARGET){
+		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COLOR_TARGET;
+	}
+	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_DEPTH_STENCIL_TARGET){
+		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_DEPTH_STENCIL_TARGET;
+	}
+	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_GRAPHICS_STORAGE_READ){
+		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_GRAPHICS_STORAGE_READ;
+	}
+	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_COMPUTE_STORAGE_READ){
+		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_READ;
+	}
+	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_COMPUTE_STORAGE_WRITE){
+		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_WRITE;
+	}
+	if(usageFlags & FNA3D_TextureUsageFlags.FNA3D_TextureUsageFlags_COMPUTE_STORAGE_SIMULTANEOUS_READ_WRITE){
+		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_SIMULTANEOUS_READ_WRITE;
+	}
 	if (isRenderTarget)
 	{
-		usageFlags |= SDL_GPU_TEXTUREUSAGE_COLOR_TARGET;
+		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COLOR_TARGET;
 	}
 
 	return (FNA3D_Texture*) SDLGPU_INTERNAL_CreateTextureWithHandle(
@@ -2735,7 +2758,7 @@ static FNA3D_Texture* SDLGPU_CreateTexture2D(
 		XNAToSDL_SurfaceFormat[format],
 		1,
 		levelCount,
-		usageFlags,
+		newUsageFlags,
 		SDL_GPU_SAMPLECOUNT_1
 	);
 }

@@ -456,7 +456,8 @@ struct FNA3D_Device
 		int32_t width,
 		int32_t height,
 		int32_t levelCount,
-		uint8_t isRenderTarget
+		uint8_t isRenderTarget,
+		FNA3D_TextureUsageFlags usageFlags
 	);
 	FNA3D_Texture* (*CreateTexture3D)(
 		FNA3D_Renderer *driverData,

@@ -667,7 +667,8 @@ FNA3D_Texture* FNA3D_CreateTexture2D(
 	int32_t width,
 	int32_t height,
 	int32_t levelCount,
-	uint8_t isRenderTarget
+	uint8_t isRenderTarget,
+	FNA3D_TextureUsageFlags usageFlags
 ) {
 	/* We're stuck tracing _after_ the call instead of _before_, because
 	 * of threading issues. This can cause timing issues!
