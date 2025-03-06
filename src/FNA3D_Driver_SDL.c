@@ -4202,6 +4202,7 @@ static FNA3D_Device* SDLGPU_CreateDevice(
 	renderer->copyPassMutex = SDL_CreateMutex();
 
 	result->driverData = (FNA3D_Renderer*) renderer;
+	result->nativeDriver = (FNA3D_NativeDriver*) device;
 
 	swapchainComposition = SDL_GPU_SWAPCHAINCOMPOSITION_SDR;
 

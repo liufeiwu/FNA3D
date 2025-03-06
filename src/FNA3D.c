@@ -234,7 +234,7 @@ FNA3D_Device* FNA3D_CreateDevice(
 FNA3D_NativeDriver* FNA3D_GetNativeDevice(
 	FNA3D_Device *device
 ) {
-	return device->driverData->device;
+	return device->nativeDriver;
 }
 
 void FNA3D_DestroyDevice(FNA3D_Device *device)

@@ -735,6 +735,9 @@ struct FNA3D_Device
 
 	/* Opaque pointer for the Driver */
 	FNA3D_Renderer *driverData;
+
+	/* Native driver */
+	FNA3D_NativeDriver *nativeDriver;
 };
 
 #define ASSIGN_DRIVER_FUNC(func, name) \
