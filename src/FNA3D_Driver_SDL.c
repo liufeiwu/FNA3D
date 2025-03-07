@@ -2756,6 +2756,10 @@ static FNA3D_Texture* SDLGPU_CreateTexture2D(
 		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COLOR_TARGET;
 	}
 
+	FNA3D_LogInfo("== usageFlags == ");
+	FNA3D_LogInfo(usageFlags);
+	FNA3D_LogInfo(newUsageFlags);
+
 	return (FNA3D_Texture*) SDLGPU_INTERNAL_CreateTextureWithHandle(
 		(SDLGPU_Renderer*) driverData,
 		(uint32_t) width,
