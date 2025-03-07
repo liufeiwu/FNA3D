@@ -2744,7 +2744,7 @@ static FNA3D_Texture* SDLGPU_CreateTexture2D(
 		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_READ;
 	}
 	if (usageFlags & FNA3D_TextureUsageFlags_COMPUTE_STORAGE_WRITE)
-	{
+	{		
 		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_WRITE;
 	}
 	if (usageFlags & FNA3D_TextureUsageFlags_COMPUTE_STORAGE_SIMULTANEOUS_READ_WRITE)
@@ -2756,9 +2756,10 @@ static FNA3D_Texture* SDLGPU_CreateTexture2D(
 		newUsageFlags |= SDL_GPU_TEXTUREUSAGE_COLOR_TARGET;
 	}
 
-	FNA3D_LogInfo("== usageFlags == ");
-	FNA3D_LogInfo(usageFlags);
-	FNA3D_LogInfo(newUsageFlags);
+	int usageFlagsInt = usageFlags;
+	int newUsageFlagsInt = newUsageFlags;
+	FNA3D_LogInfo("usage flags: %s", (char)usageFlagsInt);
+	FNA3D_LogInfo("usage new flags: %s", (char)newUsageFlagsInt);
 
 	return (FNA3D_Texture*) SDLGPU_INTERNAL_CreateTextureWithHandle(
 		(SDLGPU_Renderer*) driverData,
